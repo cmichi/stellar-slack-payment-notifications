@@ -6,12 +6,12 @@ is not ideal. Error handling should also be better.
 
 ## Current State
 
-[Screenshot](https://github.com/cmichi/stellar-slack-subscriptions/raw/master/images/1.png)
+![Screenshot](https://github.com/cmichi/stellar-slack-subscriptions/raw/master/images/1.png)
 
-[Screenshot](https://github.com/cmichi/stellar-slack-subscriptions/raw/master/images/2.png)
+![Screenshot](https://github.com/cmichi/stellar-slack-subscriptions/raw/master/images/2.png)
 
-[Screenshot](https://github.com/cmichi/stellar-slack-subscriptions/raw/master/images/3.png)
+![Screenshot](https://github.com/cmichi/stellar-slack-subscriptions/raw/master/images/3.png)
 
-[Screenshot](https://github.com/cmichi/stellar-slack-subscriptions/raw/master/images/4.png)
+![Screenshot](https://github.com/cmichi/stellar-slack-subscriptions/raw/master/images/4.png)
 
-[Screenshot](https://github.com/cmichi/stellar-slack-subscriptions/raw/master/images/5.png)
+![Screenshot](https://github.com/cmichi/stellar-slack-subscriptions/raw/master/images/5.png)
