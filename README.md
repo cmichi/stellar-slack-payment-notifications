@@ -3,6 +3,7 @@
 This is a very first working prototype. I need to improve some stuff
 to make it better scalable, opening a socket for each subscription
 is not ideal. Error handling should also be better.
+And I will write proper tests for the whole thing.
 
 ## Current State
 
