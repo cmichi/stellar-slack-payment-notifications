@@ -37,9 +37,11 @@ const txts = {
 
 app.post('/', (req, res) => { 
   let text = req.body.text; 
-  let cmds = text.split(' ');
+  let cmds = _.trim(text).split(' ');
+  _.pull(cmds, '');
   if (cmds.length === 0) {
     res.send(txts.help);
+    return;
   }
 
   let subscription;
