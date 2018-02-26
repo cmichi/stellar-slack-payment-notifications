@@ -1,16 +1,13 @@
 # Stellar Payment Subscription Bot
 
-This is a first working prototype. I need to improve some stuff
-to improve scalability; opening a socket for each subscription
-is not ideal. Error handling should also be better.
-And I will write proper tests for the whole thing.
-
-
-## Current State
-
 ![Animation](https://github.com/cmichi/stellar-slack-subscriptions/raw/master/images/animation.gif)
 
-[![Add to Slack](https://platform.slack-edge.com/img/add_to_slack.png)](https://slack.com/oauth/authorize?scope=commands,bot&client_id=308656001463.308680541383)
+[![Add to Slack](https://platform.slack-edge.com/img/add_to_slack@2x.png)](https://slack.com/oauth/authorize?scope=commands,bot&client_id=308656001463.308680541383)
+
+_Project Status: This is a first working prototype._
+I need to improve some stuff to improve scalability; opening a socket for
+each subscription is not ideal. Error handling should also be better.
+And I will write proper tests for the whole thing.
 
 
 ## License
