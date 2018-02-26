@@ -32,7 +32,7 @@ const authorizations = fs.existsSync(authorizationsStore) ?
 
 const txts = {
   cmdNotRecognized: 'Unfortunately I could not recognize your command.\n',
-  help: 'Usage:\n/stellar subscribe G123\n/stellar unsubscribe G123\n/stellar list'
+  help: 'Usage:```/stellar subscribe PUBLIC-KEY\n/stellar unsubscribe PUBLIC-KEY\n/stellar list```'
 }
 
 app.post('/', (req, res) => { 
@@ -74,7 +74,7 @@ app.post('/', (req, res) => {
       // be publicly stated in the channel that this was set up
       res.send('You will be notified on new payments for `' +
                subscription.accountId + '` in #' +
-               subscription.channelName);
+               subscription.channelName + '.');
       return;
       break;
 
@@ -100,7 +100,7 @@ app.post('/', (req, res) => {
       delete authorizations[teamId].subscriptions[hash];
       flushStore();
       res.send('Your subscription of `' + accountId + '` for the channel #' +
-               req.body.channel_name + ' was removed');
+               req.body.channel_name + ' was removed.');
       return;
       break;
 
@@ -113,13 +113,13 @@ app.post('/', (req, res) => {
       const subscriptions = authorizations[teamId].subscriptions;
 
       if (_.size(subscriptions) === 0) {
-        res.send('You are currently not subscribed to any acocunts.');
+        res.send('You are currently not subscribed to any accounts.');
         return;
       }
       
       let list = '```';
       for (let s in subscriptions) {
-        list += subscriptions[s].accountId + ' to ' + subscriptions[s].channelName + '\n'
+        list += subscriptions[s].accountId + ' to #' + subscriptions[s].channelName + '\n'
       }
       res.send('These are your subscriptions: ' + list + '```');
 
@@ -196,8 +196,8 @@ function createStream(teamId, hash) {
     const asset = payment.asset_type === 'native' ?
       'lumens' : payment.asset_code + ':' + payment.asset_issuer;
 
-    let text = payment.amount + ' ' + asset + ' from ' + payment.from
-               + ' to ' + payment.to;
+    let text = payment.amount + ' ' + asset + ' from `' + payment.from
+               + '` to `' + payment.to + '`';
 
     if (payment.to !== accountId) {
       text = 'You sent: ' + text;
