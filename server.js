@@ -73,8 +73,7 @@ app.post('/', (req, res) => {
     flushStore();
     createStream(subscription.team_id, hash);
 
-    // todo this is a private message to only the user, but it should
-    // be publicly stated in the channel that this was set up
+    // this is a private message visible only to the user
     res.send('You will be notified on new payments for `' +
              subscription.accountId + '` in #' +
              subscription.channelName + '.');
