@@ -1,14 +1,14 @@
-# Stellar Payment Subscription Bot
+# Stellar Payment Notifications Slack App
 
 ![Animation](https://github.com/cmichi/stellar-slack-subscriptions/raw/master/images/animation.gif)
 
 I am building this Slack App for the [Stellar Build Challenge](https://www.stellar.org/lumens/build/)
 of March 2018.
 
-_Project Status: Works. I'm in the process of finishing it
+_Project Status:_ Works. I'm in the process of finishing it
 up to hand it into the Slack App directory. So there might
 be some things which change in the coming days. You can add
-the Slack integration here:_
+the Slack integration here:
 
 [![Add to Slack](https://platform.slack-edge.com/img/add_to_slack.png)](https://slack.com/oauth/authorize?client_id=308656001463.308680541383&scope=commands,chat:write:bot,bot)
 
