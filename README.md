@@ -13,6 +13,19 @@ the Slack integration here:
 [![Add to Slack](https://platform.slack-edge.com/img/add_to_slack.png)](https://slack.com/oauth/authorize?client_id=308656001463.308680541383&scope=commands,chat:write:bot,bot)
 
 
+## Privacy Policy
+
+Your Slack user, team id, and channels to which you subscribe are stored in a
+private database. They are only used for the purposes of notifying you when
+new payments for a Stellar account to which you subscribed happen.
+
+
+## Support
+
+Please submit [this contact form](http://micha.elmueller.net/contact/) if you
+have any remarks, issues, or support requests.
+
+
 ## License
 
 	Copyright (c) 2018
