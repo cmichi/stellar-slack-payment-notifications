@@ -2,7 +2,7 @@
 
 ![Animation](https://github.com/cmichi/stellar-slack-subscriptions/raw/master/images/animation.gif)
 
-I am building this Slack App for the [Stellar Build Challenge](https://www.stellar.org/lumens/build/)
+I have built this Slack App for the [Stellar Build Challenge](https://www.stellar.org/lumens/build/)
 of March 2018.
 
 _Project Status:_ Works. I'm in the process of finishing it
