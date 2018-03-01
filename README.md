@@ -18,6 +18,7 @@ the Slack integration here:
 Your Slack user, team id, and channels to which you subscribe are stored in a
 private database. They are only used for the purposes of notifying you when
 new payments for a Stellar account to which you subscribed happen.
+This information is not shared with any third party.
 
 
 ## Support
