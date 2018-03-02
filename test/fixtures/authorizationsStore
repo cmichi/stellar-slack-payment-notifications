@@ -1,0 +1,14 @@
+{
+  "12345": {
+    "ok": true,
+    "access_token": "xoxp-123",
+    "scope": "identify,bot,commands,incoming-webhook,chat:write:user,chat:write:bot",
+    "user_id": "U911F14GZ",
+    "team_name": "cmichi-dev",
+    "team_id": "12345",
+    "bot": {
+      "bot_user_id": "U91JJ4GMR",
+      "bot_access_token": "xoxb-789"
+    }
+  }
+}
