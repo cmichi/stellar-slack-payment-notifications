@@ -8,4 +8,4 @@ eslint: node_modules
 
 .PHONY: test
 test:
-	LOG_LEVEL=CRITICAL mocha --forbid-only --forbid-pending test/**
+	LOG_LEVEL=CRITICAL node_modules/.bin/mocha --forbid-only --forbid-pending test/**
