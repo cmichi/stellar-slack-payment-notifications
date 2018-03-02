@@ -1,5 +1,7 @@
 # Stellar Payment Notifications Slack App
 
+[![Build Status](https://travis-ci.org/cmichi/stellar-slack-payment-notifications.svg?branch=master)](https://travis-ci.org/cmichi/stellar-slack-payment-notifications)
+
 ![Animation](https://github.com/cmichi/stellar-slack-subscriptions/raw/master/images/animation.gif)
 
 I have built this Slack App for the [Stellar Build Challenge](https://www.stellar.org/lumens/build/)
