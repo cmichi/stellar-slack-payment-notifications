@@ -11,9 +11,16 @@ const _ = require('lodash');
 process.env.AUTHORIZATIONS_STORE = '/tmp/authorizationsStore';
 process.env.SLACK_CLIENT_ID = '123';
 process.env.SLACK_CLIENT_SECRET = '456';
+
+const verificationToken = '789';
+process.env.SLACK_VERIFICATION_TOKEN = verificationToken;
+
 const server = rewire('../../lib/server');
 
 const stub = {
+  loadAccount: () => {
+    return Promise.resolve();
+  },
   payments: () => {
     return {
       forAccount: () => {
@@ -49,7 +56,9 @@ describe('HTTP methodds', function() {
   it('should return usage instructions', () =>
     request(app)
       .post('/')
-      .send(null)
+      .send({
+        'token': verificationToken,
+      })
       .expect(200)
       .then((res) => {
         assert.strictEqual(_.startsWith(res.text, 'Usage:'), true);
@@ -62,6 +71,7 @@ describe('HTTP methodds', function() {
       .send({
         'text': 'list',
         'team_id': '12345',
+        'token': verificationToken,
       })
       .expect(200)
       .then((res) => {
@@ -78,12 +88,14 @@ describe('HTTP methodds', function() {
         'team_id': '12345',
         'channel_id': '6789',
         'channel_name': 'foochannel',
+        'token': verificationToken,
       })
       .expect(200)
       .then((res) => {
         assert.strictEqual(res.text,
-                           'You will be notified on new payments for ' +
-                           '`PUBKEY` in #foochannel.');
+                           'This channel will be notified when the account ' +
+                           'id `PUBKEY` receives a new payment.');
+
         waitFor((err) => {
           if (err) return false;
 
@@ -106,6 +118,7 @@ describe('HTTP methodds', function() {
         'team_id': '12345',
         'channel_id': '6789',
         'channel_name': 'foochannel',
+        'token': verificationToken,
       })
       .expect(200)
       .then((res) => {
@@ -123,12 +136,13 @@ describe('HTTP methodds', function() {
         'team_id': '12345',
         'channel_id': '6789',
         'channel_name': 'foochannel',
+        'token': verificationToken,
       })
       .expect(200)
       .then((res) => {
         assert.strictEqual(res.text,
                            'Your subscription of `PUBKEY` for the channel ' +
-                           '#foochannel was removed.');
+                           '<#6789|foochannel> was removed.');
         waitFor((err) => {
           if (err) return false;
 
