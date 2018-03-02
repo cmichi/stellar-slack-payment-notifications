@@ -36,7 +36,7 @@ const stub = {
 };
 server.__set__('stellarServer', stub);
 
-describe('HTTP methodds', function() {
+describe('HTTP methods', function() {
 
   let app;
   before('initialize server', function(cb) {
@@ -52,6 +52,15 @@ describe('HTTP methodds', function() {
       cb(err);
     });
   });
+
+  it('should return 403 Forbidden if token invalid', () =>
+    request(app)
+      .post('/')
+      .send({
+        'token': verificationToken + 'invalidSuffix',
+      })
+      .expect(403)
+  );
 
   it('should return usage instructions', () =>
     request(app)
