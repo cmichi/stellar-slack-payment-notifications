@@ -31,6 +31,8 @@ have any remarks, issues, or support requests.
 
 ## How to set it up
 
+	$ git clone https://github.com/cmichi/stellar-slack-payment-notifications.git
+	$ cd stellar-slack-payment-notifications/
 	$ cat > .env
 	export SLACK_CLIENT_ID=...
 	export SLACK_CLIENT_SECRET=...
