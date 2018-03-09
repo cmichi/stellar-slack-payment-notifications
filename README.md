@@ -29,6 +29,20 @@ Please submit [this contact form](http://micha.elmueller.net/contact/) if you
 have any remarks, issues, or support requests.
 
 
+## How to set it up
+
+	$ cat > .env
+	export SLACK_CLIENT_ID=...
+	export SLACK_CLIENT_SECRET=...
+	export SLACK_VERIFICATION_TOKEN=...
+
+	export HORIZON_URI=https://...
+	export SERVER_URI=https://your-server
+	^D
+	$ . .env
+	$ node app.js
+
+
 ## License
 
 	Copyright (c) 2018
