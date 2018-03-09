@@ -1,7 +1,8 @@
 'use strict';
 
 const server = require('./lib/server');
-server.listen(4343, function(err) {
+const port = process.env.PORT ? process.env.PORT : 4343;
+server.listen(port, function(err) {
   if (err) {
     process.exit(1);
   }
