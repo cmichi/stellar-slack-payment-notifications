@@ -5,36 +5,22 @@ const fs = require('fs');
 
 const async = require('async');
 const request = require('supertest-as-promised');
-const rewire = require('rewire');
 const _ = require('lodash');
 
 process.env.AUTHORIZATIONS_STORE = '/tmp/authorizationsStore';
 process.env.SLACK_CLIENT_ID = '123';
 process.env.SLACK_CLIENT_SECRET = '456';
 
+process.env.HORIZON_URI = 'https://horizon-testnet.stellar.org';
+process.env.SERVER_URI = 'https://uri-to-your-server-instance';
+
+// this is a public key from the stellar testnet tutorial
+const PUBKEY = 'GB7JFK56QXQ4DVJRNPDBXABNG3IVKIXWWJJRJICHRU22Z5R5PI65GAK3';
+
 const verificationToken = '789';
 process.env.SLACK_VERIFICATION_TOKEN = verificationToken;
 
-const server = rewire('../../lib/server');
-
-const stub = {
-  loadAccount: () => {
-    return Promise.resolve();
-  },
-  payments: () => {
-    return {
-      forAccount: () => {
-        return {
-          cursor: () => {},
-          stream: () => {
-            return () => {};
-          },
-        };
-      },
-    };
-  },
-};
-server.__set__('stellarServer', stub);
+const server = require('../../lib/server');
 
 describe('HTTP methods', function() {
 
@@ -93,7 +79,7 @@ describe('HTTP methods', function() {
     request(app)
       .post('/')
       .send({
-        'text': 'subscribe PUBKEY',
+        'text': 'subscribe ' + PUBKEY,
         'team_id': '12345',
         'channel_id': '6789',
         'channel_name': 'foochannel',
@@ -103,7 +89,7 @@ describe('HTTP methods', function() {
       .then((res) => {
         assert.strictEqual(res.text,
                            'This channel will be notified when the account ' +
-                           'id `PUBKEY` receives a new payment.');
+                           'id `' + PUBKEY + '` receives a new payment.');
 
         waitFor((err) => {
           if (err) return false;
@@ -114,7 +100,7 @@ describe('HTTP methods', function() {
             return false;
           }
 
-          return store['12345'].subscriptions.PUBKEY6789 !== undefined;
+          return store['12345'].subscriptions[PUBKEY + '6789'] !== undefined;
         }, cb);
       });
   });
@@ -123,7 +109,7 @@ describe('HTTP methods', function() {
     request(app)
       .post('/')
       .send({
-        'text': 'subscribe PUBKEY',
+        'text': 'subscribe ' + PUBKEY,
         'team_id': '12345',
         'channel_id': '6789',
         'channel_name': 'foochannel',
@@ -133,7 +119,7 @@ describe('HTTP methods', function() {
       .then((res) => {
         assert.strictEqual(res.text,
                            'This channel is already subscribed to payment ' +
-                           'notifications for `PUBKEY`.');
+                           'notifications for `' + PUBKEY + '`.');
       })
   );
 
@@ -141,7 +127,7 @@ describe('HTTP methods', function() {
     request(app)
       .post('/')
       .send({
-        'text': 'unsubscribe PUBKEY',
+        'text': 'unsubscribe ' + PUBKEY,
         'team_id': '12345',
         'channel_id': '6789',
         'channel_name': 'foochannel',
@@ -150,14 +136,14 @@ describe('HTTP methods', function() {
       .expect(200)
       .then((res) => {
         assert.strictEqual(res.text,
-                           'Your subscription of `PUBKEY` for the channel ' +
-                           '<#6789|foochannel> was removed.');
+                           'Your subscription of `' + PUBKEY + '` for the ' +
+                           'channel <#6789|foochannel> was removed.');
         waitFor((err) => {
           if (err) return false;
 
           const store = readStore(process.env.AUTHORIZATIONS_STORE);
 
-          if (_.get(store, '["12345"].subscriptions["PUBKEY6789"]')) {
+          if (_.get(store, '["12345"].subscriptions["' + PUBKEY + '6789"]')) {
             return false;
           }
 
