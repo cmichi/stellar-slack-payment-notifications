@@ -1,6 +1,6 @@
 SHELL := $(shell which bash)
 PATH := $(CURDIR)/node_modules/.bin:$(PATH)
-export JSFILES = $(shell find app.js lib test -name "*.js")
+export JSFILES = $(shell find app.js lib/ test/ -name "*.js")
 
 .PHONY: eslint
 eslint: node_modules
