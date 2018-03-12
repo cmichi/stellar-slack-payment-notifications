@@ -7,12 +7,9 @@
 I have built this Slack App for the [Stellar Build Challenge](https://www.stellar.org/lumens/build/)
 of March 2018.
 
-_Project Status:_ Works. I'm in the process of finishing it
-up to hand it into the Slack App directory. So there might
-be some things which change in the coming days. You can add
-the Slack integration here:
-
 [![Add to Slack](https://platform.slack-edge.com/img/add_to_slack.png)](https://slack.com/oauth/authorize?client_id=308656001463.308680541383&scope=commands,chat:write:bot,bot)
+
+[App in the Slack App Directory](https://slack.com/apps/A92L0FXB9-stellar-payment-notifications)
 
 
 ## Privacy Policy
@@ -41,6 +38,7 @@ have any remarks, issues, or support requests.
 	export PORT=4343
 	export HORIZON_URI=https://...
 	export SERVER_URI=https://your-server
+	export BLOCKCHAIN_EXPLORER=https://stellarchain.io/tx/
 	^D
 	$ . .env
 	$ node app.js
