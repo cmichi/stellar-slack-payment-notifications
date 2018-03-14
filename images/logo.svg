@@ -14,8 +14,11 @@
    viewBox="0 0 2000 2000"
    id="svg4160"
    version="1.1"
-   inkscape:version="0.91 r13725"
-   sodipodi:docname="logo.svg">
+   inkscape:version="0.92.2 5c3e80d, 2017-08-06"
+   sodipodi:docname="logo.svg"
+   inkscape:export-filename="/tmp/logo.svg.png"
+   inkscape:export-xdpi="120"
+   inkscape:export-ydpi="120">
   <defs
      id="defs4162" />
   <sodipodi:namedview
@@ -26,18 +29,18 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.16807908"
-     inkscape:cx="623.90555"
-     inkscape:cy="73.772211"
+     inkscape:cx="-352.11806"
+     inkscape:cy="1166.6586"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
      units="px"
      showguides="false"
-     inkscape:window-width="1600"
-     inkscape:window-height="876"
+     inkscape:window-width="1364"
+     inkscape:window-height="751"
      inkscape:window-x="0"
-     inkscape:window-y="564"
-     inkscape:window-maximized="1" />
+     inkscape:window-y="15"
+     inkscape:window-maximized="0" />
   <metadata
      id="metadata4165">
     <rdf:RDF>
@@ -46,7 +49,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -56,6 +59,17 @@
      id="layer1"
      transform="translate(0,947.64)">
     <rect
+       style="fill:#ffffff;fill-opacity:1"
+       id="rect4094-3"
+       width="2000"
+       height="2000"
+       x="0"
+       y="-947.64001"
+       ry="309.00879"
+       inkscape:export-filename="/tmp/logo.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <rect
        style="fill:#979797;fill-opacity:0.25098039"
        id="rect4094"
        width="2000"
@@ -64,14 +78,14 @@
        y="-947.64001"
        ry="309.00879"
        inkscape:export-filename="/tmp/logo.png"
-       inkscape:export-xdpi="2082.27"
-       inkscape:export-ydpi="2082.27" />
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <g
        id="g4096"
        transform="matrix(23.136333,0,0,23.136333,-7218.2691,-890.80203)"
        inkscape:export-filename="/tmp/logo.png"
-       inkscape:export-xdpi="2082.27"
-       inkscape:export-ydpi="2082.27">
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
       <g
          id="g3789-7"
          transform="matrix(-0.24595252,0.96928189,-0.96928189,-0.24595252,439.91948,-174.8298)"
