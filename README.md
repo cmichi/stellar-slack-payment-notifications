@@ -36,12 +36,13 @@ have any remarks, issues, or support requests.
 	export SLACK_VERIFICATION_TOKEN=...
 
 	export PORT=4343
-	export HORIZON_URI=https://...
+	export HORIZON_URI=https://horizon.stellar.org
 	export SERVER_URI=https://your-server
 	export BLOCKCHAIN_EXPLORER=https://stellarchain.io/tx/
 	^D
+	$ npm install
 	$ . .env
-	$ node app.js
+	$ npm start
 
 
 ## License
